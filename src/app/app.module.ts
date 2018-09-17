@@ -20,8 +20,8 @@ import { MemberCardComponent } from './members/member-card/member-card.component
 import { AuthModule } from './auth/auth.module';
 import { MemberDetailComponent } from './members/member-detail/member-detail.component';
 import { MemberDetailResolver } from './_resolvers/member-detail.resolver';
-import {JwtHelperService} from '@auth0/angular-jwt';
-import { JwtModule } from '@auth0/angular-jwt';
+// import {JwtHelperService} from '@auth0/angular-jwt';
+// import { JwtModule } from '@auth0/angular-jwt';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -46,13 +46,13 @@ export function tokenGetter() {
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
     RouterModule.forRoot(appRoutes),
-    JwtModule.forRoot({
-      config: {
-        tokenGetter: tokenGetter,
-        whitelistedDomains: ['localhost:5000'],
-        blacklistedRoutes: ['localhost:5000/api/auth']
-      }
-    }),
+    // JwtModule.forRoot({
+    //   config: {
+    //     tokenGetter: tokenGetter,
+    //     whitelistedDomains: ['localhost:5000'],
+    //     blacklistedRoutes: ['localhost:5000/api/auth']
+    //   }
+    // }),
     AuthModule
   ],
   providers: [
